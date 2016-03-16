@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,          KC_Q,     KC_W,     KC_E,            KC_R,    KC_T,   KC_LBRACKET,
         CTL_T(KC_ESC),    KC_A,     KC_S,     KC_D,            KC_F,    KC_G,
         KC_LSFT,         KC_Z,     KC_X,     KC_C,            KC_V,    KC_B,   KC_LPRN,
-        KC_SYSTEM_SLEEP, KC_GRAVE, TG(WINL), LALT(KC_RETURN), KC_RETURN,
+        KC_SYSTEM_SLEEP, KC_GRAVE, TG(WINL), ALT_T(KC_ENT), KC_ENT,
                                                  KC_PSCREEN,  KC_SCROLLLOCK,
                                                               KC_HYPR,
                                                  LGUI(KC_NO), KC_FN1,  KC_MEH,
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_PGUP, KC_PGDOWN, KC_INSERT, KC_DELETE, TG(NUMP),
         KC_AUDIO_VOL_UP, KC_AUDIO_VOL_DOWN,
         LGUI(KC_GRAVE),
-        LGUI(KC_TAB),  KC_FN3, KC_SPACE
+        LGUI(KC_TAB),  LT(MDIA,KC_FN5), KC_SPACE
     ),
 /* Keymap 1: Code Layer
  *
@@ -230,7 +230,8 @@ const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_LAYER_TAP_TOGGLE(CODE),                // FN1 - Momentary Layer 1 (Symbols)
     [2] = ACTION_LAYER_TAP_TOGGLE(NUMP),                // FN2 - Momentary Layer 1 (Number Pad)
     [3] = ACTION_LAYER_TAP_TOGGLE(MDIA),                // FN3 - Momentary Layer 1 (Mouse Layer)
-    [4] = ACTION_LAYER_TAP_TOGGLE(WINL)                 // FN4 - Momentary Layer 1 (Windows Mode)
+    [4] = ACTION_LAYER_TAP_TOGGLE(WINL),                // FN4 - Momentary Layer 1 (Windows Mode)
+    [5] = LGUI(KC_SPACE)                                // FN5 - Search Button for OS X
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
